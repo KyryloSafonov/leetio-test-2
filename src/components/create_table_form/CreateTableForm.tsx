@@ -1,11 +1,12 @@
 import React, { FC, useRef } from 'react';
 import { IFormProps } from "./types";
+import "./CreateTableForm.css"
 
 export const CreateTableForm: FC<IFormProps> = ({setColumnCount, setRowsCount, rows, columns}) => {
     const rowsInput = useRef<HTMLInputElement | null>(null)
     const coulmnInput = useRef<HTMLInputElement | null>(null)
     return (
-        <div style={{display: "flex", flexDirection: 'column', gap: '15px', maxWidth: '300px'}}>
+        <div className="form-wrapper">
             <label htmlFor="rows-count">Rows Count</label>
             <input name='rows-count' type='number' ref={rowsInput} defaultValue={rows}/>
             <label htmlFor="coulmn-count">Columns Count</label>
